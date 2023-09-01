@@ -1,6 +1,7 @@
 #define CATCH_CONFIG_MAIN  // This tells Catch to provide a main() - only do this in one cpp file
 #include "catch.hpp"
 #include "int.h" // i have access to the echo_variable function in my library
+#include "decimals.h"
 
 TEST_CASE("Verify Test Configuration", "verification") {
 	REQUIRE(true == true);
@@ -14,8 +15,17 @@ TEST_CASE("Test echo_variable function", "function should return the same value 
 }
 
 /*test case add_to_double_1 with 0 as parameter*/
+TEST_CASE("Test the add to double 1 function", "testing the decimal inconsistencies") 
+{
+	//REQUIRE(.9 == add_to_double_1(0));
+}
 
 /*test case add_to_double_1 with 1 as parameter*/
+TEST_CASE("Test the add to double 2 function", "testing the decimal inconsistencies") 
+{
+	REQUIRE(1.5 == add_to_double_2(0));
+}
+
 
 /*test case add_to_double_2 with 0 as parameter*/
 
