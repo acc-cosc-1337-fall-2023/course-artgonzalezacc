@@ -6,18 +6,21 @@ using std::cin;
 
 int main() 
 {
-	//create a bool variable named even
-	//create an int variable named value
+	auto hours = 0;
+	cout<<"Enter hours: ";
+	cin>>hours;
 
-	//prompt user for a keyboard number
-	//assign the number to the value variable
-
-	//call the is_even function with value as its argument
-	//and assign its return value to the even variable
+	auto result = is_overtime(hours);
 	
-
-	//display even if number is even
-
+	if(result)
+	{
+		cout<<hours<<" is overtime\n";
+	}
+	else
+	{
+		cout<<hours<<" is not overtime\n";
+	}
+	
 
 	return 0;
 }
