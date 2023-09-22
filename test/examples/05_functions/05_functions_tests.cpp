@@ -53,3 +53,9 @@ TEST_CASE("Test function overloads")
 	REQUIRE(get_weekly_pay(52000) == 1000);
 	REQUIRE(get_weekly_pay(40, 25) == 1000);
 }
+
+TEST_CASE("Test function default params")
+{
+	REQUIRE(get_total(50) == 50);
+	REQUIRE(get_total(50, 2) == 100);
+}
