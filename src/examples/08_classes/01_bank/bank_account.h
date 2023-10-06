@@ -5,6 +5,7 @@ class BankAccount
 {
 public:
     //constructor
+    BankAccount(){}//no parameters=default constructor
     BankAccount(int b) : balance(b){/*empty class function code */}
     int get_balance(){return balance;}
 
