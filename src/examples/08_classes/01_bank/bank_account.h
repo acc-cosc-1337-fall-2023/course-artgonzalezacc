@@ -7,7 +7,7 @@ public:
     //constructor
     BankAccount(){}//no parameters=default constructor
     BankAccount(int b) : balance(b){/*empty class function code */}
-    int get_balance(){return balance;}
+    int get_balance() const {return balance;}
 
 private:
     int balance{0};//initialize to zero; happens first
