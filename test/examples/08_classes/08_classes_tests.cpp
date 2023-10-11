@@ -12,9 +12,9 @@ TEST_CASE("Test bank account get balance")
 	REQUIRE(account.get_balance() == 500);
 }
 
-TEST_CASE("Test bank deposit w default constructor")
+TEST_CASE("Test bank deposit w 0 balance")
 {
-	BankAccount account;
+	BankAccount account(0);
 	REQUIRE(account.get_balance() == 0);
 
 	account.deposit(150);
@@ -36,9 +36,9 @@ TEST_CASE("Test account deposit function")
 	REQUIRE(account2.get_balance() == 1100);
 }
 
-TEST_CASE("Test account withdraw w default constructor")
+TEST_CASE("Test account withdraw w 0 balance")
 {
-	BankAccount account;
+	BankAccount account(0);
 	REQUIRE(account.get_balance() == 0);
 
 	account.withdraw(100);

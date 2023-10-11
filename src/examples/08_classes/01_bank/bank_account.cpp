@@ -1,6 +1,8 @@
 //bank_account.cpp
 #include "bank_account.h"
 
+
+
 void BankAccount::deposit(int amount)
 {
     if(amount > 0)//the class sets the rules for modifying its data
@@ -17,6 +19,10 @@ void BankAccount::withdraw(int amount)
     }
 }
 
+void BankAccount::get_balance_from_db()
+{
+    balance = rand() % 10000 + 1;
+}
 
 
 //NOT PART OF THE BANK ACCOUNT CLASS
