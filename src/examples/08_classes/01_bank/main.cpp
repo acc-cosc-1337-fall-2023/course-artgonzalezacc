@@ -13,7 +13,14 @@ int main()
 	ATM atm(account);
 
 	atm.display_balance();
+	atm.make_deposit();
+	atm.display_balance();
 
+	cout<<"Balance: "<<account.get_balance()<<"\n";
+
+	atm.make_withdrawal();
+
+	atm.display_balance();
 	cout<<"Balance: "<<account.get_balance()<<"\n";
 
 
