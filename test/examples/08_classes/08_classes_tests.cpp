@@ -1,6 +1,7 @@
 #define CATCH_CONFIG_MAIN  // This tells Catch to provide a main() - only do this in one cpp file
 #include "catch.hpp"
-#include "bank_account.h"
+#include "checking_account.h"
+#include "savings_account.h"
 
 TEST_CASE("Verify Test Configuration", "verification") {
 	REQUIRE(true == true);
@@ -8,13 +9,13 @@ TEST_CASE("Verify Test Configuration", "verification") {
 
 TEST_CASE("Test bank account get balance")
 {
-	BankAccount account(500);
+	CheckingAccount account(500);
 	REQUIRE(account.get_balance() == 500);
 }
 
 TEST_CASE("Test bank deposit w 0 balance")
 {
-	BankAccount account(0);
+	CheckingAccount account(0);
 	REQUIRE(account.get_balance() == 0);
 
 	account.deposit(150);
@@ -23,7 +24,7 @@ TEST_CASE("Test bank deposit w 0 balance")
 
 TEST_CASE("Test account deposit function")
 {
-	BankAccount account1(500);
+	CheckingAccount account1(500);
 	BankAccount account2(1000);
 	
 	REQUIRE(account1.get_balance() == 500);
@@ -38,7 +39,7 @@ TEST_CASE("Test account deposit function")
 
 TEST_CASE("Test account withdraw w 0 balance")
 {
-	BankAccount account(0);
+	SavingsAccount account(0);
 	REQUIRE(account.get_balance() == 0);
 
 	account.withdraw(100);
@@ -47,7 +48,7 @@ TEST_CASE("Test account withdraw w 0 balance")
 
 TEST_CASE("Test account withdraw")
 {
-	BankAccount account(1000);
+	SavingsAccount account(1000);
 	REQUIRE(account.get_balance() == 1000);
 
 	account.withdraw(100);
@@ -56,7 +57,7 @@ TEST_CASE("Test account withdraw")
 
 TEST_CASE("Test account deposit and withdraw")
 {
-	BankAccount account(1000);
+	SavingsAccount account(1000);
 	REQUIRE(account.get_balance() == 1000);
 
 	account.deposit(100);
