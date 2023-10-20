@@ -12,7 +12,7 @@ int main()
 	srand(time(NULL));
 
 	CheckingAccount account(500);
-	cout<<account.get_balance();
+	cout<<account.get_balance()<<"\n";
 	
 //	BankAccount account(100);//create a variable/an object ---customer 1
 

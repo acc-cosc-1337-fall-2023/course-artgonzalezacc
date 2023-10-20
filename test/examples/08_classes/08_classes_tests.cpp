@@ -40,29 +40,29 @@ TEST_CASE("Test account deposit function")
 TEST_CASE("Test account withdraw w 0 balance")
 {
 	SavingsAccount account(0);
-	REQUIRE(account.get_balance() == 0);
+	REQUIRE(account.get_balance() == 5);
 
 	account.withdraw(100);
-	REQUIRE(account.get_balance() == 0);
+	REQUIRE(account.get_balance() == 5);
 }
 
 TEST_CASE("Test account withdraw")
 {
 	SavingsAccount account(1000);
-	REQUIRE(account.get_balance() == 1000);
+	REQUIRE(account.get_balance() == 1005);
 
 	account.withdraw(100);
-	REQUIRE(account.get_balance() == 900);
+	REQUIRE(account.get_balance() == 905);
 }
 
 TEST_CASE("Test account deposit and withdraw")
 {
 	SavingsAccount account(1000);
-	REQUIRE(account.get_balance() == 1000);
+	REQUIRE(account.get_balance() == 1005);
 
 	account.deposit(100);
-	REQUIRE(account.get_balance() == 1100);
+	REQUIRE(account.get_balance() == 1105);
 	
 	account.withdraw(100);
-	REQUIRE(account.get_balance() == 1000);
+	REQUIRE(account.get_balance() == 1005);
 }
