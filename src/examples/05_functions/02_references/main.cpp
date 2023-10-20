@@ -4,9 +4,11 @@ using std::cout;
 
 int main()
 {
-    int num = 5;
+    int num = 5, num1=10;
     int& num_ref = num;//take the address where num is stored
-
+    num_ref = num1;
+    cout<<"Num1: "<<num1<<"\n";
+    num1 = 100;
     cout<<"Display the address where num is stored: "<<&num_ref<<"\n";
     cout<<"Num address via num: "<<&num<<"\n";
     cout<<"Num value via num: "<<num<<"\n";
