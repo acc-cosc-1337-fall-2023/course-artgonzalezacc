@@ -5,7 +5,7 @@ using std::cin; using std::cout;
 
 void ATM::display_balance()
 {
-    cout<<"ATM balance: "<<account.get_balance()<<"\n\n";
+    cout<<"ATM balance: "<<account->get_balance()<<"\n\n";
 }
 
 void ATM::make_deposit()
@@ -14,7 +14,7 @@ void ATM::make_deposit()
     cout<<"Enter amount to deposit: ";
     cin>>amount;
 
-    account.deposit(amount);
+    account->deposit(amount);
 }
 
 void ATM::make_withdrawal()
@@ -22,7 +22,7 @@ void ATM::make_withdrawal()
     auto amount = 0;
     cout<<"Enter withdrawal amount: ";
     cin>>amount;
-    account.withdraw(amount);
+    account->withdraw(amount);
 }
 
 //free functions not part of the atm class

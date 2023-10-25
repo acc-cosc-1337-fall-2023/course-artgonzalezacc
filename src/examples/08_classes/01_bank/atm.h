@@ -5,13 +5,13 @@
 class ATM
 {
 public:
-    ATM(BankAccount& a) : account(a){}
+    ATM(BankAccount* a) : account(a){}
     void display_balance();
     void make_deposit();
     void make_withdrawal();
     
 private:
-    BankAccount& account;
+    BankAccount* account;
 };
 
 //FREE FUNCTIONS-NOT PART OF THE ATM CLASS
