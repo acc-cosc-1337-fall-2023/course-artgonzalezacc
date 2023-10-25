@@ -9,60 +9,73 @@ TEST_CASE("Verify Test Configuration", "verification") {
 
 TEST_CASE("Test bank account get balance")
 {
-	CheckingAccount account(500);
-	REQUIRE(account.get_balance() == 500);
+	BankAccount* account;
+	CheckingAccount checking_account(500);
+	account = & checking_account;
+
+	REQUIRE(account->get_balance() == 500);
 }
 
 TEST_CASE("Test bank deposit w 0 balance")
 {
-	CheckingAccount account(0);
-	REQUIRE(account.get_balance() == 0);
+	BankAccount* account;
+	CheckingAccount checking_account(0);
+	account = &checking_account;
 
-	account.deposit(150);
-	REQUIRE(account.get_balance() == 150);
+	REQUIRE(account->get_balance() == 0);
+
+	account->deposit(150);
+	REQUIRE(account->get_balance() == 150);
 }
 
 TEST_CASE("Test account deposit function")
 {
-	CheckingAccount account1(500);
-	BankAccount account2(1000);
+	BankAccount* account;
+	CheckingAccount checking_account(500);
+	account = &checking_account;
 	
-	REQUIRE(account1.get_balance() == 500);
-	REQUIRE(account2.get_balance() == 1000);
+	REQUIRE(account->get_balance() == 500);
 
-	account1.deposit(50);
-	REQUIRE(account1.get_balance() == 550);
+	account->deposit(50);
+	REQUIRE(account->get_balance() == 550);
 
-	account2.deposit(100);
-	REQUIRE(account2.get_balance() == 1100);
 }
 
 TEST_CASE("Test account withdraw w 0 balance")
 {
-	SavingsAccount account(0);
-	REQUIRE(account.get_balance() == 5);
+	BankAccount* account;
+	SavingsAccount savings_account(0);
+	account = &savings_account;
 
-	account.withdraw(100);
-	REQUIRE(account.get_balance() == 5);
+	REQUIRE(account->get_balance() == 5);
+
+	account->withdraw(100);
+	REQUIRE(account->get_balance() == 5);
 }
 
 TEST_CASE("Test account withdraw")
 {
-	SavingsAccount account(1000);
-	REQUIRE(account.get_balance() == 1005);
+	BankAccount* account;
+	SavingsAccount savings_account(1000);
+	account = &savings_account;
 
-	account.withdraw(100);
-	REQUIRE(account.get_balance() == 905);
+	REQUIRE(account->get_balance() == 1005);
+
+	account->withdraw(100);
+	REQUIRE(account->get_balance() == 905);
 }
 
 TEST_CASE("Test account deposit and withdraw")
 {
-	SavingsAccount account(1000);
-	REQUIRE(account.get_balance() == 1005);
+	BankAccount* account;
+	SavingsAccount savings_account(1000);
+	account = &savings_account;
 
-	account.deposit(100);
-	REQUIRE(account.get_balance() == 1105);
+	REQUIRE(account->get_balance() == 1005);
+
+	account->deposit(100);
+	REQUIRE(account->get_balance() == 1105);
 	
-	account.withdraw(100);
-	REQUIRE(account.get_balance() == 1005);
+	account->withdraw(100);
+	REQUIRE(account->get_balance() == 1005);
 }
