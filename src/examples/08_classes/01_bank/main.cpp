@@ -10,7 +10,7 @@ int main()
 {
 
 	srand(time(NULL));
-	BankAccount* account;//create a pointers; points to nothing NULL
+	BankAccount* account = nullptr;//create a pointers; points to nothing NULL
 
 	/*CheckingAccount checking_account(500);
 	account = &checking_account;
