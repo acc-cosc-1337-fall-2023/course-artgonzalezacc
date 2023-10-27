@@ -13,11 +13,11 @@ int main()
 	srand(time(NULL));
 	BankAccount* account = nullptr;//create a pointers; points to nothing NULL
 
-	CheckingAccount checking_account(500);
+	CheckingAccount checking_account;
 	account = &checking_account;
 	cout<<account->get_balance()<<"\n";
 
-	SavingsAccount savings_account(500);
+	SavingsAccount savings_account;
 	account = &savings_account;
 	cout<<account->get_balance()<<"\n";
 
@@ -25,16 +25,10 @@ int main()
 	accounts.push_back(&checking_account);
 	accounts.push_back(&savings_account);
 
-	for(auto account: accounts)
-	{
-		cout<<"Balance: "<<account->get_balance()<<"\n";
-	}
-
-	/*
-	ATM atm(account);
+	ATM atm(accounts);
 	run_menu(atm);
 
-	cout<<"Balance: "<<account->get_balance()<<"\n";*/
+	cout<<"Balance: "<<account->get_balance()<<"\n";
 
 	return 0;
 }

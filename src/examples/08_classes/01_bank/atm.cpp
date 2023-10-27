@@ -25,6 +25,13 @@ void ATM::make_withdrawal()
     account->withdraw(amount);
 }
 
+void ATM::scan_card()
+{
+    account_index = rand() % accounts.size();
+    cout<<"index: "<<account_index<<"\n";
+    account = accounts[account_index];
+}
+
 //free functions not part of the atm class
 void display_menu()
 {
@@ -37,6 +44,8 @@ void display_menu()
 void run_menu(ATM& atm)
 {
     auto option = 0;
+
+    atm.scan_card();
 
     do
     {
