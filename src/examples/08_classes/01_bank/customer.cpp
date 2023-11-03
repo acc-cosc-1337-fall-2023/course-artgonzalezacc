@@ -1,11 +1,11 @@
 //customer.cpp
 #include "customer.h"
 
-Customer::Customer()
-{
-    CheckingAccount checking_account;
-    accounts.push_back(&checking_account);
+using std::make_unique;
 
-    SavingsAccount savings_account;
-    accounts.push_back(&savings_account);
+Customer::Customer(int id, std::string n)
+    : customer_id(id), name(n)
+{
+    accounts.push_back(make_unique<CheckingAccount>());
+    accounts.push_back(make_unique<SavingsAccount>());
 }

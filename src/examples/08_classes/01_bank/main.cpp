@@ -1,7 +1,5 @@
 #include "atm.h"
-#include "bank_account.h"
-#include "checking_account.h"
-#include "savings_account.h"
+#include "customer.h"
 #include<time.h>//helps provide a true random number with rand() function
 #include<vector>
 #include<memory>
@@ -13,24 +11,17 @@ int main()
 {
 
 	srand(time(NULL));
-	unique_ptr<BankAccount> account = make_unique<CheckingAccount>(500);
-	cout<<account->get_balance()<<"\n";
 	
-/*
-	SavingsAccount savings_account;
-	account = &savings_account;
-	cout<<account->get_balance()<<"\n";
+	vector<Customer> customers;
+	customers.push_back(Customer(1, "John Doe"));
+	customers.push_back(Customer(2, "Mary Doe"));
+	customers.push_back(Customer(3, "John Hancock"));
+	customers.push_back(Customer(4, "Mary Hancock"));
+	customers.push_back(Customer(5, "Bjarne Stroustrup"));
 
-	vector<BankAccount*> accounts;
-	accounts.push_back(&checking_account);
-	accounts.push_back(&savings_account);
-
-	
-	ATM atm(accounts);
+	ATM atm(customers);
 	run_menu(atm);
 
-	cout<<"Balance: "<<account->get_balance()<<"\n";
-	*/
 
 	return 0;
 }

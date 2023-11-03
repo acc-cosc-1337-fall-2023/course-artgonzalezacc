@@ -5,11 +5,17 @@ using std::cin; using std::cout;
 
 void ATM::display_balance()
 {
+    Customer& customer = customers[customer_index];
+    std::unique_ptr<BankAccount>& account = customer.get_account(account_index);
+
     cout<<"ATM balance: "<<account->get_balance()<<"\n\n";
 }
 
 void ATM::make_deposit()
 {
+    auto& customer = customers[customer_index];
+    auto& account = customer.get_account(account_index);
+
     auto amount = 0;
     cout<<"Enter amount to deposit: ";
     cin>>amount;
@@ -19,6 +25,9 @@ void ATM::make_deposit()
 
 void ATM::make_withdrawal()
 {
+    auto& customer = customers[customer_index];
+    auto& account = customer.get_account(account_index);
+    
     auto amount = 0;
     cout<<"Enter withdrawal amount: ";
     cin>>amount;
@@ -27,9 +36,10 @@ void ATM::make_withdrawal()
 
 void ATM::scan_card()
 {
-    account_index = rand() % accounts.size();
-    cout<<"index: "<<account_index<<"\n";
-    account = accounts[account_index];
+    customer_index = rand() % customers.size();
+
+    cout<<"Enter 1 for checking 2 for savings: ";
+    cin>>account_index;
 }
 
 //free functions not part of the atm class

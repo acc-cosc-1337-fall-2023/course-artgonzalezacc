@@ -1,21 +1,23 @@
 //atm.h
 #include<iostream>
 #include "bank_account.h"
+#include "customer.h"
+#include<memory>
 #include<vector>
 #include<stdlib.h>//random function
 
 class ATM
 {
 public:
-    ATM(std::vector<BankAccount*> a) : accounts(a){}
+    ATM(std::vector<Customer>& a) : customers(a){}
     void display_balance();
     void make_deposit();
     void make_withdrawal();
     void scan_card();
     
 private:
-    std::vector<BankAccount*> accounts;
-    BankAccount* account;
+    std::vector<Customer>& customers;
+    int customer_index;
     int account_index;
 };
 
