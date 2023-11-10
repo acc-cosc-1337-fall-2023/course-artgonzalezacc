@@ -9,7 +9,7 @@ class CheckingAccount : public BankAccount//inherit from bank account
 public:
     CheckingAccount(){/**EMPTY CODE BLOCK*/}
     CheckingAccount(int b) : BankAccount(b) {/**EMPTY CODE BLOCK*/}
-
+    int get_balance() const {return BankAccount::get_balance();}
 private:
 
 };
