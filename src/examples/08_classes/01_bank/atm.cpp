@@ -1,5 +1,6 @@
 //atm.cpp
 #include "atm.h"
+#include "atm_data.h"
 
 using std::cin; using std::cout; using std::vector;
 using std::unique_ptr;
@@ -55,6 +56,10 @@ void display_menu()
 
 void run_menu()
 {
+    ATMData data;
+    vector<Customer>& customers = data.get_customers();
+    data.save_customers(customers);
+
     auto option = 0;
     auto input = 'c';
     
@@ -63,7 +68,7 @@ void run_menu()
         cout<<"Enter to scan card: ";
         cin>>input;
         
-        vector<Customer> customers = get_customers();
+        //vector<Customer> customers = get_customers();
         auto customer_index = scan_card(customers.size());
         Customer& customer = customers[customer_index];
 
@@ -81,6 +86,11 @@ void run_menu()
             cout<<"Enter menu option: ";
             cin>>option;
             handle_menu_option(option, atm);
+
+            if(option == 4)
+            {
+                data.save_customers(customers);
+            }
 
         } while (option != 4);
     } while(true);
