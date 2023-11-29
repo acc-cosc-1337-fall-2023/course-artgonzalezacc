@@ -15,12 +15,19 @@ TEST_CASE("Test reference and pointer parameters")
 
 	REQUIRE(num1 == 20);
 	REQUIRE(num2 == 30);
-}*/
-
+}
 TEST_CASE("Test my vector creation form existing Vector")
 {
 	Vector v1(3);
 	Vector v2 = v1;
+
+}*/
+
+TEST_CASE("Test my vector creation overwrite an existing Vector variable")
+{
+	Vector v1(3);
+	Vector v2(3);
+	v2 = v1;
 
 }
 
