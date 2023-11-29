@@ -18,8 +18,9 @@ Vector::~Vector()
 //FREE FUNCTIONS-NOT PART OF THE CLASS
 
 void use_vector()
-{
-    Vector v(3);
+{   //NOT recommended; use a stack variable instead -- Vector v(3);
+    Vector* v = new Vector(3);
     cout<<"Exiting use_vector free function...\n";
+    delete v;
 }
 
