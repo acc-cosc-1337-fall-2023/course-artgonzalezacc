@@ -21,7 +21,7 @@ TEST_CASE("Test my vector creation form existing Vector")
 	Vector v1(3);
 	Vector v2 = v1;
 
-}*/
+}
 
 TEST_CASE("Test my vector creation overwrite an existing Vector variable")
 {
@@ -29,5 +29,11 @@ TEST_CASE("Test my vector creation overwrite an existing Vector variable")
 	Vector v2(3);
 	v2 = v1;
 
+}*/
+
+TEST_CASE("Test my vector with std::move function")
+{
+	Vector v1(3);
+	Vector v2 = std::move(v1);
 }
 
