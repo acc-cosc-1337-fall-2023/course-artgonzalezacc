@@ -5,9 +5,8 @@ using std::cout;
 
 int main()
 {   
-    cout<<"Loading use_vector to the stack...\n";
-    use_vector();
-    cout<<"UnLoaded use_vector from the stack...\n";
+    Vector v;
+    v.Push_Back(3);
 
     return 0;
 }
