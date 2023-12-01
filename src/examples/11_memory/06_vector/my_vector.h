@@ -8,6 +8,7 @@ public:
     Vector(const Vector& v);//Rule 1 of 3 of legacy C++-Copy constructor
     Vector& operator=(const Vector& v);//Rule 2 of 3 of legacy C++ Copy assignment
     Vector(Vector&& v);//Rule 4 of 5 in modern C++-move constructor
+    Vector& operator=(Vector&& v1);//Rule 5 of 5 in modern c++-move assignment
     ~Vector();//Rule number 3 of 3 in Legacy C++-destructor
 private:
     int size;
@@ -18,3 +19,4 @@ private:
 
 //FREE FUNCTIONS-NOT PART OF THE CLASS
 void use_vector();
+Vector get_vector();
