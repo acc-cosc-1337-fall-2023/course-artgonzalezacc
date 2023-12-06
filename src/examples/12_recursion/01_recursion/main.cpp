@@ -4,7 +4,7 @@ using std::cout;
 
 int main() 
 {
-	say_hello();
+	say_hello(2);
 
 	return 0;
 }

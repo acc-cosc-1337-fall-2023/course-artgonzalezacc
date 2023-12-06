@@ -3,10 +3,17 @@
 using std::cout;
 
 //Write code for recursive display function
-void say_hello()
+void say_hello(int times)
 {
+    if(times == 0)
+    {
+        cout<<"Base case\n";
+        return;
+    }
+    
     cout<<"Hello\n";
-    say_hello();
+    
+    say_hello(times-1);
 }
 
 //Write code for recursive factorial
